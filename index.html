@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Rota da Fé</title>
+<meta name="description" content="Como a religião entra na política brasileira e onde passa do limite: da Teologia da Libertação à bancada evangélica, com fontes e etiquetas de comprovação.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Newsreader:opsz,wght@6..72,400;6..72,600&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: a parish bulletin crossed with a route map. Liturgical violet is the accent; the two chart series are the only other strong colours. */
+:root{
+  --bg:#f1eff4; --paper:#faf9fc; --ink:#1d1a26; --muted:#5d5869; --line:#d3cedb;
+  --accent:#5b3a8c; --accent-soft:#e6def2;
+  --cat:#2a78d6; --ev:#eb6834;
+  --doc:#1d1a26; --alleg:#a3501a; --alleg-soft:#f8e6d7; --open:#5b4bb0; --open-soft:#e7e3f6; --no:#a11d33; --no-soft:#f7dde1;
+  --c-esq:#c0392b; --c-dir:#1f5bb5; --c-eua:#56606e;
+  --display:"Young Serif",Georgia,"Times New Roman",serif;
+  --body:"Newsreader",Georgia,serif;
+  --ui:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"DM Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#13111a; --paper:#1a1722; --ink:#ebe8f1; --muted:#a39db0; --line:#2f2a3b;
+  --accent:#b79be6; --accent-soft:#2c2340;
+  --cat:#3987e5; --ev:#d95926;
+  --doc:#ebe8f1; --alleg:#f0a066; --alleg-soft:#3a2516; --open:#ab9ff0; --open-soft:#29254a; --no:#f07a8c; --no-soft:#3d1a21;
+  --c-esq:#f2796c; --c-dir:#78a8f2; --c-eua:#a5afbd;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#13111a; --paper:#1a1722; --ink:#ebe8f1; --muted:#a39db0; --line:#2f2a3b;
+  --accent:#b79be6; --accent-soft:#2c2340;
+  --cat:#3987e5; --ev:#d95926;
+  --doc:#ebe8f1; --alleg:#f0a066; --alleg-soft:#3a2516; --open:#ab9ff0; --open-soft:#29254a; --no:#f07a8c; --no-soft:#3d1a21;
+  --c-esq:#f2796c; --c-dir:#78a8f2; --c-eua:#a5afbd;
+  color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:18px;line-height:1.6}
+a{color:inherit}
+.wrap{max-width:880px;margin:0 auto;padding-inline:16px}
+.num{font-variant-numeric:tabular-nums}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(60px,15vw,132px);line-height:.9;margin:0;letter-spacing:-.01em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--accent)}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(32px,6.5vw,48px);line-height:1.02;margin:0;text-wrap:balance}
+h3{font-family:var(--ui);text-wrap:balance}
+.lede{font-size:20px;max-width:60ch;margin:0}
+.sec{padding-block:52px 8px;display:grid;gap:20px}
+.sec-intro{color:var(--muted);max-width:62ch;margin:0}
+.legend{display:flex;flex-wrap:wrap;gap:10px 18px;font-family:var(--ui);font-size:14px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.ev{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:2px;white-space:nowrap;font-weight:500}
+.ev.doc{background:var(--doc);color:var(--paper)}
+.ev.alleg{background:var(--alleg-soft);color:var(--alleg);border:1px solid var(--alleg)}
+.ev.open{background:var(--open-soft);color:var(--open);border:1px dashed var(--open)}
+.ev.no{background:var(--no-soft);color:var(--no);border:1px solid var(--no)}
+.ev.part{background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent)}
+.src{font-family:var(--mono);font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;gap:2px 14px}
+.src a{color:var(--muted);text-underline-offset:2px}
+.src a:hover{color:var(--accent)}
+.more{font-family:var(--mono);font-size:13px;color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor;justify-self:start}
+.more:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+/* hero */
+.hero{padding-block:40px 24px;display:grid;gap:22px}
+.note{background:var(--paper);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:4px;padding:14px 16px;font-family:var(--ui);font-size:15px;max-width:72ch;margin:0}
+.routebox{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:22px 14px 16px}
+.metro{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}
+.metro li{position:relative;display:grid;justify-items:center;text-align:center;gap:4px;padding-inline:4px}
+.metro li::after{content:"";position:absolute;top:11px;left:50%;width:100%;height:6px;background:var(--accent);z-index:0}
+.metro li:last-child::after{display:none}
+.metro li.abroad::after{background:repeating-linear-gradient(90deg,var(--accent) 0 10px,transparent 10px 16px)}
+.metro .stn{width:28px;height:28px;border-radius:50%;background:var(--paper);border:5px solid var(--accent);position:relative;z-index:1}
+.metro .code{font-family:var(--mono);font-size:13px;font-weight:500;margin-top:4px}
+.metro .what{font-family:var(--ui);font-weight:700;font-size:14px;line-height:1.15}
+.metro .when{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.metro .stn{transform:scale(.4);opacity:0;animation:stn .35s ease-out forwards}
+.metro li:nth-child(1) .stn{animation-delay:.1s}.metro li:nth-child(2) .stn{animation-delay:.3s}.metro li:nth-child(3) .stn{animation-delay:.5s}.metro li:nth-child(4) .stn{animation-delay:.7s}.metro li:nth-child(5) .stn{animation-delay:.9s}.metro li:nth-child(6) .stn{animation-delay:1.1s}
+@keyframes stn{to{transform:none;opacity:1}}
+@media (max-width:640px){
+  .metro{grid-template-columns:1fr;gap:14px}
+  .metro li{grid-template-columns:28px 1fr;justify-items:start;text-align:left;column-gap:14px;row-gap:0}
+  .metro li .stn{grid-row:1/4}
+  .metro li::after{top:28px;left:11px;width:6px;height:calc(100% + 14px - 28px)}
+  .metro li.abroad::after{background:repeating-linear-gradient(180deg,var(--accent) 0 10px,transparent 10px 16px)}
+  .metro .code{margin-top:0}
+}
+@media (prefers-reduced-motion:reduce){.metro .stn{animation:none;transform:none;opacity:1}}
+
+/* numbers */
+.chart{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:14px;margin:0;display:grid;gap:10px}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart .grid{stroke:var(--line);stroke-width:1}
+.chart .ax{font-family:var(--mono);font-size:12px;fill:var(--muted)}
+.chart .s{fill:none;stroke-width:2.5;stroke-linejoin:round;stroke-linecap:round}
+.chart .s.cat{stroke:var(--cat)}.chart .s.ev{stroke:var(--ev)}
+.chart .p{stroke:var(--paper);stroke-width:2}
+.chart .p.cat{fill:var(--cat)}.chart .p.ev{fill:var(--ev)}
+.chart .lbl{font-family:var(--ui);font-weight:700;font-size:15px;fill:var(--ink)}
+.chart .hit{fill:transparent;cursor:pointer;outline:none}
+.chart .hit:focus-visible{stroke:var(--ink);stroke-width:2}
+.clegend{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--ui);font-size:14px}
+.clegend span{display:inline-flex;align-items:center;gap:8px}
+.clegend i{width:18px;height:3px;border-radius:2px;background:var(--c)}
+.ctip{font-family:var(--ui);font-size:14px;color:var(--muted);margin:0;min-height:22px}
+.ctip b{color:var(--ink)}
+.chart details{font-family:var(--ui);font-size:14px}
+.chart summary{cursor:pointer;color:var(--accent);font-family:var(--mono);font-size:12px}
+.tbl{width:100%;border-collapse:collapse;margin-top:8px;font-variant-numeric:tabular-nums}
+.tbl th,.tbl td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left}
+.tbl th{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.tiles div{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:14px 16px;display:grid;gap:4px;align-content:start}
+.tiles b{font-family:var(--display);font-weight:400;font-size:46px;line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
+.tiles span{font-family:var(--ui);font-weight:600;font-size:14px;line-height:1.3}
+.tiles small{font-family:var(--ui);font-size:12px;color:var(--muted)}
+@media (max-width:640px){.tiles{grid-template-columns:1fr}}
+
+/* two sides */
+.sides{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.side{background:var(--paper);border:1px solid var(--line);border-top:5px solid var(--c);border-radius:4px;padding:16px 18px;display:grid;gap:10px;align-content:start;min-width:0}
+.side h3{margin:0;font-family:var(--display);font-weight:400;font-size:26px;line-height:1.1}
+.side .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--c)}
+.side ul{margin:0;padding-left:18px;display:grid;gap:8px;font-size:16px}
+.side li small{display:block;font-family:var(--ui);font-size:12.5px;color:var(--muted)}
+.middle{background:var(--paper);border:1px dashed var(--line);border-radius:4px;padding:14px 18px;display:grid;gap:8px}
+.middle h3{margin:0;font-size:17px}
+.middle ul{margin:0;padding-left:18px;display:grid;gap:6px;font-size:16px}
+@media (max-width:700px){.sides{grid-template-columns:1fr}}
+
+/* steps (washington) */
+.steps{display:grid;border-top:1px solid var(--line)}
+.steps .row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;padding-block:14px;border-bottom:1px solid var(--line)}
+.steps strong{font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);padding-top:3px}
+.steps .row>div{display:grid;gap:6px;min-width:0}
+.steps p{margin:0}
+.steps .top{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.steps h3{margin:0;font-size:17px;line-height:1.3}
+@media (max-width:620px){.steps .row{grid-template-columns:1fr;gap:4px}}
+.callout{background:var(--accent-soft);border:1px solid var(--accent);border-radius:4px;padding:16px 18px;display:grid;gap:6px}
+.callout h3{margin:0;font-size:18px}
+.callout p{margin:0}
+
+/* law table */
+.law{display:grid;gap:0;border-top:1px solid var(--line)}
+.law .r{display:grid;grid-template-columns:minmax(0,1.2fr) 130px minmax(0,1.6fr);gap:14px;padding-block:14px;border-bottom:1px solid var(--line);align-items:start}
+.law .q{font-family:var(--ui);font-weight:600;font-size:16px}
+.law .a{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:2px;justify-self:start}
+.law .a.ok{background:var(--accent-soft);color:var(--accent);border:1px solid var(--accent)}
+.law .a.ban{background:var(--no-soft);color:var(--no);border:1px solid var(--no)}
+.law .a.mid{background:var(--alleg-soft);color:var(--alleg);border:1px solid var(--alleg)}
+.law p{margin:0;font-size:16px}
+@media (max-width:700px){.law .r{grid-template-columns:1fr;gap:6px}}
+
+/* link card */
+.par a{text-decoration:none;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:16px 18px;display:grid;gap:6px;transition:border-color .2s,transform .2s}
+.par a:hover{border-color:var(--accent);transform:translateY(-2px)}
+.par a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.par .n{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.par strong{font-family:var(--display);font-weight:400;font-size:30px;line-height:1.05}
+.par .d{font-family:var(--ui);font-size:15px;color:var(--muted)}
+
+/* myths + verdict */
+.myths{display:grid;gap:12px}
+.myth{background:var(--paper);border:1px solid var(--line);border-radius:4px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);overflow:hidden}
+.myth .say{padding:16px;border-right:1px solid var(--line);display:grid;gap:8px;align-content:start}
+.myth .say q{font-family:var(--display);font-size:22px;line-height:1.15;quotes:"“" "”"}
+.myth .say small{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.myth .is{padding:16px;display:grid;gap:8px;align-content:start}
+.myth .is p{margin:0;font-size:16px}
+@media (max-width:640px){.myth{grid-template-columns:1fr}.myth .say{border-right:0;border-bottom:1px solid var(--line)}}
+.verdict{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.col{min-width:0;padding:18px;border-radius:4px;display:grid;gap:10px;align-content:start}
+.col.yes{background:var(--paper);border:1px solid var(--line)}
+.col.not{background:var(--open-soft);border:1px dashed var(--open)}
+.col h3{margin:0;font-size:17px}
+.col ul{margin:0;padding-left:18px;display:grid;gap:8px;font-size:16px}
+footer{padding-block:44px 56px;color:var(--muted);font-family:var(--ui);font-size:14px;display:grid;gap:8px}
+footer p{margin:0;max-width:66ch}
+</style>
+</head><body>
+
+
+<style>/* barra comum das Rotas */.rotas-bar{border-bottom:1px solid var(--line);background:var(--bg);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}.rotas-bar>div{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}.rotas-bar a{color:var(--muted);text-decoration:none;padding-block:2px;border-bottom:2px solid transparent}.rotas-bar a:hover{color:var(--ink)}.rotas-bar a[aria-current]{color:var(--ink);border-bottom-color:var(--accent)}.rotas-bar .rb-home{color:var(--accent);font-weight:600}.rotas-bar a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}</style><nav class="rotas-bar" aria-label="Rotas"><div><a class="rb-home" href="https://fcarvalhodev.github.io/rotas/">Rotas</a><a href="https://fcarvalhodev.github.io/rota-washington/">Washington</a><a href="https://fcarvalhodev.github.io/rota-master/">Master</a><a href="https://fcarvalhodev.github.io/rota-curitiba/">Curitiba</a><a href="https://fcarvalhodev.github.io/rota-da-fe/" aria-current="page">Fé</a></div></nav>
+<header class="wrap hero">
+  <div class="kicker">Dossiê · Religião e política no Brasil · atualizado em 9 out 2026</div>
+  <h1>Rota<br>da <em>Fé</em></h1>
+  <div class="routebox" aria-label="A rota da fé na política, de Roma a Belo Horizonte">
+    <ol class="metro">
+      <li class="abroad"><span class="stn"></span><span class="code">FCO</span><span class="what">Vaticano II</span><span class="when">1962–1965</span></li>
+      <li class="abroad"><span class="stn"></span><span class="code">MDE</span><span class="what">Medellín</span><span class="when">1968</span></li>
+      <li class="abroad"><span class="stn"></span><span class="code">DCA</span><span class="what">Washington reage</span><span class="when">1969 · 1980</span></li>
+      <li><span class="stn"></span><span class="code">GIG</span><span class="what">A virada evangélica</span><span class="when">1970–2022</span></li>
+      <li><span class="stn"></span><span class="code">BSB</span><span class="what">A bancada</span><span class="when">2026</span></li>
+      <li><span class="stn"></span><span class="code">CNF</span><span class="what">Lagoinha e Master</span><span class="when">2026</span></li>
+    </ol>
+  </div>
+  <p class="lede">Padres nas Comunidades de Base, pastores no palanque, bispos fundando partido. A religião sempre fez política no Brasil, pelos dois lados. Esta rota mostra como isso aconteceu e onde a lei põe o limite.</p>
+  <p class="note">A fé de ninguém é o assunto aqui. A pergunta é como igrejas e lideranças religiosas entram na política, e quando isso passa do que a lei permite.</p>
+  <div class="legend">
+    <span><b class="ev doc">Documentado</b> decisão, registro ou declaração pública</span>
+    <span><b class="ev part">Em parte</b> tem base, mas a frase vai além dela</span>
+    <span><b class="ev no">Não consta</b> não há registro que sustente</span>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="sec" aria-labelledby="h-num" style="padding-top:12px">
+    <h2 id="h-num">A virada em números</h2>
+    <p class="sec-intro">Em 1970, nove em cada dez brasileiros se diziam católicos. Em 2022, pouco mais da metade. Os evangélicos passaram de 5% para mais de um quarto da população.</p>
+    <figure class="chart">
+      <div class="clegend"><span style="--c:var(--cat)"><i></i>Católicos</span><span style="--c:var(--ev)"><i></i>Evangélicos</span></div>
+      <svg viewBox="0 0 680 290" role="img" aria-label="Católicos caem de 91,8% em 1970 para 56,7% em 2022; evangélicos sobem de 5,2% para 26,9%">
+        <line class="grid" x1="60" x2="640" y1="250" y2="250"/><line class="grid" x1="60" x2="640" y1="197.5" y2="197.5"/><line class="grid" x1="60" x2="640" y1="145" y2="145"/><line class="grid" x1="60" x2="640" y1="92.5" y2="92.5"/><line class="grid" x1="60" x2="640" y1="40" y2="40"/>
+        <text class="ax" x="52" y="254" text-anchor="end">0%</text><text class="ax" x="52" y="201.5" text-anchor="end">25%</text><text class="ax" x="52" y="149" text-anchor="end">50%</text><text class="ax" x="52" y="96.5" text-anchor="end">75%</text><text class="ax" x="52" y="44" text-anchor="end">100%</text>
+        <text class="ax" x="70" y="276" text-anchor="middle">1970</text><text class="ax" x="288.1" y="276" text-anchor="middle">1991</text><text class="ax" x="381.5" y="276" text-anchor="middle">2000</text><text class="ax" x="485.4" y="276" text-anchor="middle">2010</text><text class="ax" x="610" y="276" text-anchor="middle">2022</text>
+        <polyline class="s cat" points="70,57.2 288.1,75.7 381.5,95.4 485.4,114.3 610,130.9"/>
+        <polyline class="s ev" points="70,239.1 288.1,231.1 381.5,217.7 485.4,203.4 610,193.5"/>
+        <g id="pts"></g>
+        <text class="lbl" x="78" y="48">91,8%</text>
+        <text class="lbl" x="602" y="122" text-anchor="end">56,7%</text>
+        <text class="lbl" x="78" y="230">5,2%</text>
+        <text class="lbl" x="602" y="184" text-anchor="end">26,9%</text>
+      </svg>
+      <p class="ctip" id="ctip" aria-live="polite">Toque num ponto para ver o valor. Em 2022, os sem religião eram 9,3%.</p>
+      <details><summary>Ver os dados em tabela</summary>
+        <table class="tbl"><thead><tr><th>Censo</th><th>Católicos</th><th>Evangélicos</th></tr></thead>
+          <tbody><tr><td>1970</td><td>91,8%</td><td>5,2%</td></tr><tr><td>1991</td><td>83,0%</td><td>9,0%</td></tr><tr><td>2000</td><td>73,6%</td><td>15,4%</td></tr><tr><td>2010</td><td>64,6%</td><td>22,2%</td></tr><tr><td>2022*</td><td>56,7%</td><td>26,9%</td></tr></tbody></table>
+        <p style="margin:8px 0 0;color:var(--muted)">* O Censo 2022 mede pessoas de 10 anos ou mais. Nessa base, 2010 tinha 65,1% de católicos e 21,6% de evangélicos.</p>
+      </details>
+    </figure>
+    <div class="src"><a href="https://agenciadenoticias.ibge.gov.br/agencia-sala-de-imprensa/2013-agencia-de-noticias/releases/14244-asi-censo-2010-numero-de-catolicos-cai-e-aumenta-o-de-evangelicos-espiritas-" target="_blank" rel="noopener">IBGE · Censo 2010</a><a href="https://www.congressoemfoco.com.br/noticia/109200/censo-2022-1-em-4-brasileiros-e-evangelico-catolicos-caem-para-56-7" target="_blank" rel="noopener">Congresso em Foco · Censo 2022</a><a href="https://ihu.unisinos.br/622998-a-aceleracao-da-transicao-religiosa-no-brasil-1872-2032-artigo-de-jose-eustaquio-diniz-alves" target="_blank" rel="noopener">IHU · série histórica</a></div>
+    <div class="tiles">
+      <div><b class="num">210</b><span>deputados na Frente Parlamentar Evangélica</span><small>mais 26 senadores</small></div>
+      <div><b class="num">194</b><span>deputados na Frente Parlamentar Católica</span><small>de um total de 513</small></div>
+      <div><b class="num">106</b><span>deputados assinaram as duas</span><small>mais da metade de cada frente</small></div>
+    </div>
+    <div class="src"><a href="https://www.congressoemfoco.com.br/noticia/116503/frentes-catolica-e-evangelica-compartilham-metade-das-bancadas" target="_blank" rel="noopener">Congresso em Foco · fev 2026</a></div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-sides">
+    <h2 id="h-sides">Os dois lados da fé</h2>
+    <p class="sec-intro">A religião não é de um campo só. Nas últimas décadas, cada lado teve sua base religiosa organizada.</p>
+    <div class="sides">
+      <article class="side" style="--c:var(--c-esq)"><span class="tag">Esquerda · católicos</span><h3>Das Comunidades de Base ao PT</h3>
+        <ul>
+          <li>Em 1968, em Medellín, os bispos latino-americanos assumem a "opção preferencial pelos pobres".</li>
+          <li>Em 1978, o jornal da Arquidiocese de São Paulo defende um novo partido de base popular, e Leonardo Boff diz que as Comunidades de Base devem ajudar a formá-lo.<small>A hierarquia da Igreja não fundou o PT, mas leigos, a Pastoral Operária e as CEBs participaram da articulação.</small></li>
+          <li>Em 1982, as dioceses de São Paulo e Santo André proíbem padres e religiosos de apoiar partidos.</li>
+          <li>Em 1994, os católicos ligados às CEBs eram o grupo religioso que mais votava em Lula.</li>
+          <li>Em 2022, Lula teve cerca de 58% dos votos católicos no segundo turno.</li>
+        </ul>
+        <div class="src"><a href="https://revistaperseu.fpabramo.org.br/index.php/revista-perseu/article/download/40/15" target="_blank" rel="noopener">Revista Perseu</a><a href="https://mais.opovo.com.br/reportagens-especiais/pauta-eleicoes-2026/2026/05/07/fe-e-politica-as-tensoes-e-diversidades-do-voto-religioso-no-brasil.html" target="_blank" rel="noopener">O Povo</a><a href="https://www.ihu.unisinos.br/623503-o-eleitorado-sem-religiao-foi-o-fiel-da-balanca-da-vitoria-de-lula-artigo-de-jose-eustaquio-diniz-alves" target="_blank" rel="noopener">IHU</a></div>
+      </article>
+      <article class="side" style="--c:var(--c-dir)"><span class="tag">Direita · evangélicos</span><h3>Do templo ao palanque</h3>
+        <ul>
+          <li>A Igreja Universal elege aliados pelo Republicanos, antigo PRB, chamado de "partido da Universal". Em 2020 foram 208 prefeitos e 2.594 vereadores.<small>Obreiros distribuem santinhos na porta dos templos, e pastores pedem votos no fim dos cultos, segundo a Agência Pública.</small></li>
+          <li>Em agosto de 2022, Silas Malafaia e outros pastores gravam vídeo convocando fiéis para o 7 de Setembro de Bolsonaro.</li>
+          <li>Em 2022, Bolsonaro teve cerca de 69% dos votos evangélicos no segundo turno.</li>
+          <li>Em 2026, o Datafolha mostra Flávio com 62% dos evangélicos num segundo turno simulado, contra 29% de Lula.</li>
+        </ul>
+        <div class="src"><a href="https://ihu.unisinos.br/604777-o-exercito-de-obreiros-da-universal-na-guerra-santa-por-votos" target="_blank" rel="noopener">IHU / Agência Pública</a><a href="https://www.correiobraziliense.com.br/politica/2022/08/5029012-lideres-neopentecostais-pregam-para-reeleger-bolsonaro.html" target="_blank" rel="noopener">Correio Braziliense</a><a href="https://portaldeprefeitura.com.br/bastidores-da-politica/pt-cria-rede-com-mil-comites-evangelicos-para-ampliar-apoio-a-lula-nas/630828/" target="_blank" rel="noopener">Portal de Prefeitura</a></div>
+      </article>
+    </div>
+    <div class="middle">
+      <h3>E quem atravessa a linha</h3>
+      <ul>
+        <li>Em outubro de 2022, Lula publica uma carta aos evangélicos defendendo a liberdade religiosa, dizendo ser contra o aborto e criticando o uso eleitoral da fé.</li>
+        <li>Em 2026, o PT cria o comitê "Evangélicos com Lula" e planeja mais de mil comitês nas periferias.</li>
+        <li>Em 2023, o PT liberou seus deputados para votar a PEC que amplia a isenção das igrejas, e seis petistas assinaram o texto. Na votação final de 2026, a federação do PT votou contra.</li>
+      </ul>
+      <div class="src"><a href="https://www.opovo.com.br/eleicoes-2022/2022/10/19/em-carta-a-evangelicos-lula-critica-uso-eleitoral-da-fe-e-reforca-ser-contra-o-aborto-leia-na-integra.html" target="_blank" rel="noopener">O Povo · carta de 2022</a><a href="https://portaldeprefeitura.com.br/bastidores-da-politica/pt-cria-rede-com-mil-comites-evangelicos-para-ampliar-apoio-a-lula-nas/630828/" target="_blank" rel="noopener">Portal de Prefeitura</a><a href="https://www.maisgoias.com.br/politica/com-apoio-de-petistas-ccj-da-camara-aprova-pec-que-amplia-imunidade-tributaria-de-igrejas/" target="_blank" rel="noopener">Mais Goiás</a><a href="https://www.congressoemfoco.com.br/noticia/119271/camara-aprova-pec-que-garante-imunidade-tributaria-as-igrejas" target="_blank" rel="noopener">Congresso em Foco</a></div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-dc">
+    <h2 id="h-dc">O que Washington fez</h2>
+    <p class="sec-intro">A Guerra Fria transformou a Igreja latino-americana em assunto de segurança para os Estados Unidos.</p>
+    <div class="steps">
+      <div class="row"><strong>1969</strong><div><div class="top"><span class="ev doc">Documentado</span></div><h3>O relatório Rockefeller</h3><p>Depois de visitar a região, Nelson Rockefeller alerta que a Igreja latino-americana, com a nova "opção pelos pobres", está vulnerável à "penetração subversiva".</p><div class="src"><a href="https://www.revistaenvio.org/articulo/3097" target="_blank" rel="noopener">Revista Envío</a></div></div></div>
+      <div class="row"><strong>1975–1977</strong><div><div class="top"><span class="ev doc">Documentado</span></div><h3>A CIA usava religiosos</h3><p>Revelações sobre o uso de clérigos e missionários em operações secretas levam a CIA a proibir a prática em 1977. A regra tem uma exceção para "circunstâncias extraordinárias", criticada por igrejas de todas as correntes.</p><div class="src"><a href="https://religionnews.com/?p=42186" target="_blank" rel="noopener">Religion News Service</a><a href="https://csmonitor.com/1980/0225/022519.html" target="_blank" rel="noopener">Christian Science Monitor</a></div></div></div>
+      <div class="row"><strong>1980</strong><div><div class="top"><span class="ev doc">Documentado</span></div><h3>O Documento de Santa Fé</h3><p>Assessores de Reagan escrevem que a política americana deve "contrapor" a Teologia da Libertação.</p><div class="src"><a href="https://www.revistaenvio.org/articulo/3097" target="_blank" rel="noopener">Revista Envío</a></div></div></div>
+      <div class="row"><strong>1982</strong><div><div class="top"><span class="ev doc">Documentado</span></div><h3>Ríos Montt e a direita religiosa americana</h3><p>O general evangélico toma o poder na Guatemala com um golpe. O televangelista Pat Robertson pede aos americanos orações e dinheiro para a "batalha contra Satanás" do ditador.</p><div class="src"><a href="https://www.csmonitor.com/1989/0310/o1evan.html" target="_blank" rel="noopener">Christian Science Monitor</a></div></div></div>
+      <div class="row"><strong>1984–1985</strong><div><div class="top"><span class="ev doc">Documentado</span></div><h3>O Vaticano também freia</h3><p>O então cardeal Joseph Ratzinger publica uma crítica oficial aos elementos marxistas da Teologia da Libertação. Em 1985, o Vaticano impõe um ano de silêncio a Leonardo Boff. A resistência não veio só de Washington.</p><div class="src"><a href="https://www.ebiografia.com/leonardo_boff/" target="_blank" rel="noopener">eBiografia</a></div></div></div>
+    </div>
+    <div class="callout">
+      <h3>Então a igreja evangélica é um plano da CIA?</h3>
+      <p>Não há documento que mostre isso. Está provado que os EUA queriam enfraquecer a Teologia da Libertação e que a CIA usou religiosos em alguns casos. Mas o crescimento evangélico é explicado por pesquisadores sobretudo por fatores locais, como urbanização e migração para as periferias. No Brasil, as maiores igrejas neopentecostais foram fundadas e são dirigidas por brasileiros.</p>
+      <div class="src"><a href="https://www.jornalopcao.com.br/artigo-de-opiniao/as-divisoes-do-pentecostalismo-no-brasil-780879/" target="_blank" rel="noopener">Jornal Opção</a></div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-law">
+    <h2 id="h-law">O que a lei permite</h2>
+    <p class="sec-intro">Religioso pode ter opinião política. O limite está no uso do templo, do dinheiro da igreja e da autoridade sobre os fiéis.</p>
+    <div class="law">
+      <div class="r"><span class="q">Fazer propaganda eleitoral dentro de igrejas e templos</span><span class="a ban">Proibido</span><p>A Lei 9.504, no artigo 37, trata templos como bens de uso comum, onde não pode haver propaganda. A multa vai de R$ 2 mil a R$ 8 mil. A denúncia pode ser feita pelo aplicativo Pardal.</p></div>
+      <div class="r"><span class="q">Igreja doar dinheiro ou bens para campanha</span><span class="a ban">Proibido</span><p>O artigo 24 da mesma lei proíbe candidatos e partidos de receber doações de entidades religiosas, em dinheiro ou em bens.</p></div>
+      <div class="r"><span class="q">Punir o "abuso de poder religioso"</span><span class="a mid">Indiretamente</span><p>Em agosto de 2020, o TSE rejeitou por 6 a 1 a proposta de Fachin de criar essa punição, porque a lei não a prevê. A pressão religiosa ainda pode ser punida como abuso de poder econômico, fraude ou coação.</p></div>
+      <div class="r"><span class="q">Igreja não pagar imposto</span><span class="a ok">Permitido</span><p>A Constituição proíbe cobrar impostos de templos de qualquer culto. Em maio de 2026, a Câmara aprovou uma PEC que estende a isenção às compras de igrejas e entidades ligadas a elas. O texto está no Senado.</p></div>
+    </div>
+    <div class="src"><a href="https://www.tnh1.com.br/noticia/nid/propaganda-eleitoral-e-proibida-em-igrejas-e-templos-religiosos-veja-como-denunciar/" target="_blank" rel="noopener">TNH1 / MPF</a><a href="https://www.agazeta.com.br/brasil/tse-rejeita-criacao-de-punicao-para-abuso-de-poder-religioso-na-eleicao-0820" target="_blank" rel="noopener">A Gazeta · TSE 2020</a><a href="https://www.congressoemfoco.com.br/noticia/119271/camara-aprova-pec-que-garante-imunidade-tributaria-as-igrejas" target="_blank" rel="noopener">Congresso em Foco · PEC</a><a href="https://viva.com.br/politica/bancada-evangelica-quer-mais-isencao-de-impostos-e-influencia-no-congresso.html" target="_blank" rel="noopener">Viva</a></div>
+  </section>
+
+  <section class="sec par" aria-label="Lagoinha e o caso Master">
+    <a href="https://fcarvalhodev.github.io/rota-master/lagoinha.html"><span class="n">Estação final · Belo Horizonte · Rota Master</span><strong>O braço da Lagoinha</strong><span class="d">Onde a fé encontra o dinheiro do Banco Master: o cunhado pastor, a conta de R$ 57 milhões e como André Valadão aproximou Vorcaro e Nikolas.</span><span class="more">Abrir na Rota Master →</span></a>
+  </section>
+
+  <section class="sec" aria-labelledby="h-myth">
+    <h2 id="h-myth">O que circula × o que consta</h2>
+    <div class="myths" id="myths"></div>
+  </section>
+
+  <section class="sec" aria-labelledby="h-ver">
+    <h2 id="h-ver">Onde a prova termina</h2>
+    <div class="verdict">
+      <div class="col yes"><h3>O que está documentado</h3><ul>
+        <li>O Brasil passou de 91,8% de católicos em 1970 para 56,7% em 2022, e os evangélicos chegaram a 26,9%.</li>
+        <li>A esquerda católica ajudou a articular o PT, e a Igreja Universal elege aliados pelo Republicanos.</li>
+        <li>Os EUA trataram a Teologia da Libertação como ameaça, e a CIA usou religiosos antes de proibir a prática, em 1977.</li>
+        <li>Propaganda em templo e doação de igreja a campanha são proibidas.</li>
+      </ul></div>
+      <div class="col not"><h3>O que não está provado</h3><ul>
+        <li>Que o crescimento evangélico tenha sido planejado pelo governo americano.</li>
+        <li>Que os evangélicos votem em bloco. Quase um terço votou em Lula em 2022.</li>
+        <li>Que exista hoje uma punição específica para "abuso de poder religioso". O TSE rejeitou criá-la.</li>
+      </ul></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Fatos reunidos a partir de reportagens, documentos e dados do IBGE publicados até 9 de outubro de 2026. Os percentuais de voto de 2022 são estimativas a partir de pesquisas, não resultados oficiais por religião, que o TSE não registra.</p>
+    <p>Segundo turno: 25 de outubro de 2026.</p>
+  </footer>
+</main>
+
+<script>
+const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+/* chart points with tap/hover readout */
+(function(){
+  const ns="http://www.w3.org/2000/svg",g=document.getElementById("pts"),tip=document.getElementById("ctip"),base=tip.innerHTML;
+  const X={1970:70,1991:288.1,2000:381.5,2010:485.4,2022:610};
+  const D=[["cat","Católicos",{1970:91.8,1991:83,2000:73.6,2010:64.6,2022:56.7}],["ev","Evangélicos",{1970:5.2,1991:9,2000:15.4,2010:22.2,2022:26.9}]];
+  D.forEach(([k,n,v])=>Object.entries(v).forEach(([yr,val])=>{
+    const cy=250-val*2.1,cx=X[yr];
+    const c=document.createElementNS(ns,"circle");c.setAttribute("cx",cx);c.setAttribute("cy",cy);c.setAttribute("r",5);c.setAttribute("class","p "+k);g.appendChild(c);
+    const h=document.createElementNS(ns,"circle");h.setAttribute("cx",cx);h.setAttribute("cy",cy);h.setAttribute("r",14);h.setAttribute("class","hit");h.setAttribute("tabindex","0");h.setAttribute("role","button");
+    const label=`${n} em ${yr}: ${String(val).replace(".",",")}%`;h.setAttribute("aria-label",label);
+    const show=()=>tip.innerHTML=`<b>${n}</b> em ${yr}: ${String(val).replace(".",",")}%${yr==="2022"?" (base de 10 anos ou mais)":""}`;
+    h.addEventListener("mouseenter",show);h.addEventListener("focus",show);h.addEventListener("click",show);h.addEventListener("mouseleave",()=>tip.innerHTML=base);
+    g.appendChild(h);
+  }));
+})();
+const M=[
+ ["As igrejas evangélicas são um plano da CIA.","Redes sociais","part","Os EUA queriam enfraquecer a Teologia da Libertação, e a CIA usou religiosos antes de proibir a prática, em 1977. Mas não há documento de um plano para criar ou expandir igrejas, e as maiores igrejas neopentecostais do Brasil foram fundadas por brasileiros.",[["Revista Envío","https://www.revistaenvio.org/articulo/3097"],["Religion News Service","https://religionnews.com/?p=42186"]]],
+ ["Todo evangélico vota na direita.","Redes sociais","no","A maioria vota, mas não todos. Em 2022, cerca de 31% dos evangélicos votaram em Lula no segundo turno. Em 2026, o Datafolha mostra 29% com ele.",[["IHU","https://www.ihu.unisinos.br/623503-o-eleitorado-sem-religiao-foi-o-fiel-da-balanca-da-vitoria-de-lula-artigo-de-jose-eustaquio-diniz-alves"],["Portal de Prefeitura","https://portaldeprefeitura.com.br/bastidores-da-politica/pt-cria-rede-com-mil-comites-evangelicos-para-ampliar-apoio-a-lula-nas/630828/"]]],
+ ["A esquerda é contra a religião.","Redes sociais","no","A esquerda brasileira tem raiz religiosa: as Comunidades de Base e a Pastoral Operária ajudaram a articular o PT. Lula escreveu uma carta aos evangélicos em 2022, e o PT cria comitês evangélicos em 2026.",[["Revista Perseu","https://revistaperseu.fpabramo.org.br/index.php/revista-perseu/article/download/40/15"],["O Povo","https://www.opovo.com.br/eleicoes-2022/2022/10/19/em-carta-a-evangelicos-lula-critica-uso-eleitoral-da-fe-e-reforca-ser-contra-o-aborto-leia-na-integra.html"]]],
+ ["A Teologia da Libertação é marxismo disfarçado de religião.","Críticos","part","Ela usou ferramentas da análise marxista, como classe e dependência, e o Vaticano criticou isso em 1984. Mas partia de textos bíblicos sobre os pobres e foi produzida por padres e bispos, não por partidos.",[["eBiografia","https://www.ebiografia.com/leonardo_boff/"],["Revista Envío","https://www.revistaenvio.org/articulo/3097"]]],
+ ["Pastor pode pedir voto no culto.","Redes sociais","no","Propaganda eleitoral em templos é proibida pela Lei 9.504, com multa. O pastor pode ter opinião, mas não pode transformar o culto em comício.",[["TNH1 / MPF","https://www.tnh1.com.br/noticia/nid/propaganda-eleitoral-e-proibida-em-igrejas-e-templos-religiosos-veja-como-denunciar/"]]],
+ ["Igreja não paga imposto.","Redes sociais","part","Templos de qualquer culto têm imunidade de impostos pela Constituição. A PEC aprovada na Câmara em 2026 quer estender isso às compras das igrejas. Ainda falta o Senado.",[["Viva","https://viva.com.br/politica/bancada-evangelica-quer-mais-isencao-de-impostos-e-influencia-no-congresso.html"],["Congresso em Foco","https://www.congressoemfoco.com.br/noticia/119271/camara-aprova-pec-que-garante-imunidade-tributaria-as-igrejas"]]],
+ ["O Brasil ainda é um país católico.","Redes sociais","part","Os católicos ainda são maioria, com 56,7% no Censo 2022, mas é o menor percentual da história. E eles também se dividem: Lula teve cerca de 58% do voto católico em 2022.",[["Congresso em Foco","https://www.congressoemfoco.com.br/noticia/109200/censo-2022-1-em-4-brasileiros-e-evangelico-catolicos-caem-para-56-7"]]]
+];
+const ML={no:"Não consta",part:"Em parte",doc:"Documentado"};
+document.getElementById("myths").innerHTML=M.map(m=>`<article class="myth"><div class="say"><small>${m[1]}</small><q>${esc(m[0])}</q></div><div class="is"><span class="ev ${m[2]}" style="justify-self:start">${ML[m[2]]}</span><p>${esc(m[3])}</p><div class="src">${m[4].map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${s[0]}</a>`).join("")}</div></div></article>`).join("");
+</script>
+
+</body></html>
