@@ -179,7 +179,7 @@ footer p{margin:0;max-width:66ch}
 </head><body>
 
 
-<style>/* barra comum das Rotas */.rotas-bar{border-bottom:1px solid var(--line);background:var(--bg);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}.rotas-bar>div{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}.rotas-bar a{color:var(--muted);text-decoration:none;padding-block:2px;border-bottom:2px solid transparent}.rotas-bar a:hover{color:var(--ink)}.rotas-bar a[aria-current]{color:var(--ink);border-bottom-color:var(--accent)}.rotas-bar .rb-home{color:var(--accent);font-weight:600}.rotas-bar a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}</style><nav class="rotas-bar" aria-label="Rotas"><div><a class="rb-home" href="https://fcarvalhodev.github.io/rotas/">Rotas</a><a href="https://fcarvalhodev.github.io/rota-washington/">Washington</a><a href="https://fcarvalhodev.github.io/rota-master/">Master</a><a href="https://fcarvalhodev.github.io/rota-curitiba/">Curitiba</a><a href="https://fcarvalhodev.github.io/rota-da-fe/" aria-current="page">Fé</a><a href="https://fcarvalhodev.github.io/rota-esplanada/">Esplanada</a><a href="https://fcarvalhodev.github.io/rota-itamaraty/">Itamaraty</a><a href="https://fcarvalhodev.github.io/rota-da-picanha/">Picanha</a><a href="https://fcarvalhodev.github.io/rota-do-ibge/">IBGE</a><a href="https://fcarvalhodev.github.io/rota-velho-chico/">Velho Chico</a><a href="https://fcarvalhodev.github.io/rota-do-tesouro/">Tesouro</a><a href="https://fcarvalhodev.github.io/rota-rouanet/">Rouanet</a><a href="https://fcarvalhodev.github.io/rota-dos-ventos/">Ventos</a></div></nav>
+<style>/* barra comum das Rotas */.rotas-bar{border-bottom:1px solid var(--line);background:var(--bg);font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}.rotas-bar>div{max-width:880px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}.rotas-bar a{color:var(--muted);text-decoration:none;padding-block:2px;border-bottom:2px solid transparent}.rotas-bar a:hover{color:var(--ink)}.rotas-bar a[aria-current]{color:var(--ink);border-bottom-color:var(--accent)}.rotas-bar .rb-home{color:var(--accent);font-weight:600}.rotas-bar a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}</style><style>/* padrão das Rotas: formato detalhado */body{font-size:17px;line-height:1.6}h1{font-family:var(--display);font-stretch:62%;font-weight:900;font-size:clamp(60px,15vw,140px);line-height:.86;text-transform:uppercase;overflow-wrap:anywhere}h2{font-family:var(--display);font-stretch:66%;font-weight:800;font-size:clamp(34px,7vw,52px);line-height:.95;text-transform:uppercase}</style><nav class="rotas-bar" aria-label="Rotas"><div><a class="rb-home" href="https://fcarvalhodev.github.io/rotas/">Rotas</a><a href="https://fcarvalhodev.github.io/rota-washington/">Washington</a><a href="https://fcarvalhodev.github.io/rota-master/">Master</a><a href="https://fcarvalhodev.github.io/rota-curitiba/">Curitiba</a><a href="https://fcarvalhodev.github.io/rota-da-fe/" aria-current="page">Fé</a><a href="https://fcarvalhodev.github.io/rota-esplanada/">Esplanada</a><a href="https://fcarvalhodev.github.io/rota-itamaraty/">Itamaraty</a><a href="https://fcarvalhodev.github.io/rota-da-picanha/">Picanha</a><a href="https://fcarvalhodev.github.io/rota-do-ibge/">IBGE</a><a href="https://fcarvalhodev.github.io/rota-velho-chico/">Velho Chico</a><a href="https://fcarvalhodev.github.io/rota-do-tesouro/">Tesouro</a><a href="https://fcarvalhodev.github.io/rota-rouanet/">Rouanet</a><a href="https://fcarvalhodev.github.io/rota-dos-ventos/">Ventos</a></div></nav>
 <header class="wrap hero">
   <div class="kicker">Dossiê · Religião e política no Brasil · atualizado em 9 out 2026</div>
   <h1>Rota<br>da <em>Fé</em></h1>
@@ -197,8 +197,8 @@ footer p{margin:0;max-width:66ch}
   <p class="note">A fé de ninguém é o assunto aqui. A pergunta é como igrejas e lideranças religiosas entram na política, e quando isso passa do que a lei permite.</p>
   <div class="legend">
     <span><b class="ev doc">Documentado</b> decisão, registro ou declaração pública</span>
-    <span><b class="ev part">Em parte</b> tem base, mas a frase vai além dela</span>
-    <span><b class="ev no">Não consta</b> não há registro que sustente</span>
+    <span><b class="ev part">Meia verdade</b> a frase tem base, mas vai além dela</span>
+    <span><b class="ev no">Falso</b> não há registro que sustente a frase</span>
   </div>
 </header>
 
@@ -305,7 +305,7 @@ footer p{margin:0;max-width:66ch}
   </section>
 
   <section class="sec" aria-labelledby="h-myth">
-    <h2 id="h-myth">O que circula × o que consta</h2>
+    <h2 id="h-myth">É verdade?</h2>
     <div class="myths" id="myths"></div>
   </section>
 
@@ -358,7 +358,7 @@ const M=[
  ["Igreja não paga imposto.","Redes sociais","part","Templos de qualquer culto têm imunidade de impostos pela Constituição. A PEC aprovada na Câmara em 2026 quer estender isso às compras das igrejas. Ainda falta o Senado.",[["Viva","https://viva.com.br/politica/bancada-evangelica-quer-mais-isencao-de-impostos-e-influencia-no-congresso.html"],["Congresso em Foco","https://www.congressoemfoco.com.br/noticia/119271/camara-aprova-pec-que-garante-imunidade-tributaria-as-igrejas"]]],
  ["O Brasil ainda é um país católico.","Redes sociais","part","Os católicos ainda são maioria, com 56,7% no Censo 2022, mas é o menor percentual da história. E eles também se dividem: Lula teve cerca de 58% do voto católico em 2022.",[["Congresso em Foco","https://www.congressoemfoco.com.br/noticia/109200/censo-2022-1-em-4-brasileiros-e-evangelico-catolicos-caem-para-56-7"]]]
 ];
-const ML={no:"Não consta",part:"Em parte",doc:"Documentado"};
+const ML={no:"Falso",part:"Meia verdade",doc:"Verdade",open:"Em aberto"};
 document.getElementById("myths").innerHTML=M.map(m=>`<article class="myth"><div class="say"><small>${m[1]}</small><q>${esc(m[0])}</q></div><div class="is"><span class="ev ${m[2]}" style="justify-self:start">${ML[m[2]]}</span><p>${esc(m[3])}</p><div class="src">${m[4].map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${s[0]}</a>`).join("")}</div></div></article>`).join("");
 </script>
 
